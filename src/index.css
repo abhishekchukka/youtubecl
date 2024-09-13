@@ -9,7 +9,13 @@ a {
   text-decoration: none;
   color: black;
 }
+.login-signup {
+  background-color: #c0b9b9;
+  display: flex;
+  justify-content: center;
 
+  flex-direction: column;
+}
 ::-webkit-scrollbar {
   width: 0px;
   height: 5px;
@@ -85,4 +91,25 @@ a {
   .search-bar {
     width: 200px;
   }
+}
+
+.input-field {
+  width: 100%;
+  max-width: 400px; /* Max width for better readability on large screens */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc; /* Subtle border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  font-size: 16px;
+}
+
+.login-signup {
+  background-color: #f4f4f4; /* Lighter background for better contrast */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  height: 100vh; /* Full viewport height */
+  padding: 20px; /* Add padding around */
 }

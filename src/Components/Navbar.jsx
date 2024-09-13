@@ -1,10 +1,24 @@
 import React from "react";
 import { Stack } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
-// console.log(five);
+import { signOut } from "firebase/auth";
+import { auth } from "../utils/auth/firebase";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("User signed out");
+        navigate("/"); // Redirect to /login after successful logout
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
+
   return (
     <Stack
       direction="row"
@@ -21,6 +35,7 @@ const Navbar = () => {
         <img src={logo} alt="logo" height={45} />
       </Link>
       <SearchBar />
+      <button onClick={handleLogout}>Logout</button>;
     </Stack>
   );
 };
